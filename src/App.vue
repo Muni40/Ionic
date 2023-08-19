@@ -3,10 +3,9 @@
     <ion-router-outlet v-if="$store.state.tokens!=null" ></ion-router-outlet>
     <!-- <LoginView v-else @loginEmited="connected=true"/> -->
     <login-view v-else></login-view>
-
-  
   </ion-app>
 </template>
+
 
 <script>
 import LoginView from "./components/LoginComponent.vue"
@@ -45,7 +44,7 @@ export default {
     // }
   mounted ()
   {
-   $store.state.tokens = Json.parse(localStorage.getItem( "tokens" ) )
+   this.$store.state.tokens = JSON.parse(localStorage.getItem( "tokens" ) )
   }
     
 }

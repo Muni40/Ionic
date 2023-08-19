@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { add,power } from 'ionicons/icons';
+import { add} from 'ionicons/icons';
 
 import {
   IonContent,
@@ -47,11 +47,11 @@ import {
   IonFab,
   IonIcon,
   IonFabButton,
-   modalController,
+  modalController,
 
 } from '@ionic/vue';
 // import axios from 'axios'    
-import FabButton from '../components/FabButton.vue';
+import FabButton from '../components/FabButton.vue'
 
 // import {} from "ionicons/icons"
 
@@ -59,7 +59,8 @@ export default{
   data ()
   {
     return {
-      message:[],
+      message,
+      add 
     }
   },
 
@@ -68,10 +69,10 @@ export default{
     IonPage,
     IonToolbar, IonTitle, IonFab, IonFabButton, IonIcon
   },
-    setup ()
-    {
-      return { add };
-  },
+  //   setup ()
+  //   {
+  //     return { add };
+  // },
   methods: {
     async addProduit () 
     {
@@ -90,9 +91,11 @@ export default{
     },
     logOut ()
     {
-        localStorage.removeItem( "access", JSON.stringify( response.data.access ) ) /* hgxydgxdgxhdg */
+        // localStorage.removeItem( "access", JSON.stringify( response.data.access ) ) /* hgxydgxdgxhdg */
         //   console.log( response.data.access )
         // 
+        localStorage.removeItem( "tokens" ),
+        this.$store.state.tokens = null
         }
       
   }

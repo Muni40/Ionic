@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
-import axios from 'axios'
+import axios from 'axios';
+import store from './store';
 
 import { IonicVue } from '@ionic/vue';
 window.axios = axios
@@ -23,11 +24,12 @@ import '@ionic/vue/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-// import AddConge from './components/AddConge.vue';
+import './theme/core.css';
 
 const app = createApp(App)
   .use(IonicVue)
-  .use( router );
+  .use( router )
+  .use(store);
   
 // app.component( 'add-conge', AddConge );
   
